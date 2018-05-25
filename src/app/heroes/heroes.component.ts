@@ -14,16 +14,7 @@ import { HeroService } from '../hero.service';
 })
 // Component class is exported so it could be used elsewhere
 export class HeroesComponent implements OnInit {
-  hero: Hero = {
-    id: 1,
-    name: 'Windstorm'
-  };
   heroes: Hero[];
-  selectedHero: Hero;
-
-  onSelect(hero: Hero): void {
-    this.selectedHero = hero;
-  }
 
   constructor(private heroService: HeroService) { }
 
@@ -38,5 +29,4 @@ export class HeroesComponent implements OnInit {
     this.heroService.getHeroes()
       .subscribe(heroes => this.heroes = heroes);
   }
-
 }
