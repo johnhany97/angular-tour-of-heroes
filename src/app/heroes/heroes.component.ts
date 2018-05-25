@@ -4,6 +4,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Hero } from '../hero';
+import { HEROES } from '../mock-heroes';
 
 @Component({ // Following is automatically generated three metadata properties
   // Selector css element also matches name of the HTML element that identifies this component
@@ -17,6 +18,12 @@ export class HeroesComponent implements OnInit {
     id: 1,
     name: 'Windstorm'
   };
+  heroes = HEROES;
+  selectedHero: Hero;
+
+  onSelect(hero: Hero): void {
+    this.selectedHero = hero;
+  }
 
   constructor() { }
 
